@@ -7,9 +7,10 @@ app = 'acc-omniroute-connect369'
 primary_region = 'nrt'
 
 [build]
+  image = 'docker.io/diegosouzapw/omniroute:3.8.50'
 
 [processes]
-  app = 'node run-standalone.mjs'
+  app = 'node dev/run-standalone.mjs'
 
 [deploy]
 #  release_command = "node ./dbsetup.js"
