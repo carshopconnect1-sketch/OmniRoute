@@ -1,0 +1,3 @@
+# Fly's GitHub launcher expects to publish an app-owned registry image.
+# Re-wrap the official prebuilt release so no Next.js source build is needed.
+FROM docker.io/diegosouzapw/omniroute:3.8.50
