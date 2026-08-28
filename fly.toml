@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for oroute on 2026-03-20T09:12:34Z
+# fly.toml app configuration file generated for acc-omniroute-connect369 on 2026-08-28T17:45:51Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -9,11 +9,18 @@ primary_region = 'nrt'
 [build]
   dockerfile = 'Dockerfile.fly'
 
+[deploy]
+
+[env]
+  BIND = '0.0.0.0'
+  DATA_DIR = '/data'
+  HOST = '0.0.0.0'
+  HOSTNAME = '0.0.0.0'
+  NEXT_PUBLIC_BASE_URL = 'https://acc-omniroute-connect369.fly.dev'
+  TZ = 'Asia/Tokyo'
+
 [processes]
   app = 'node dev/run-standalone.mjs'
-
-[deploy]
-#  release_command = "node ./dbsetup.js"
 
 [[mounts]]
   source = 'data'
@@ -35,13 +42,3 @@ primary_region = 'nrt'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 1024
-
-[env]
-  TZ = "Asia/Tokyo"
-  DATA_DIR = "/data"
-  NEXT_PUBLIC_BASE_URL = "https://acc-omniroute-connect369.fly.dev"
-  
-  # Bind to all interfaces for Fly runtime networking.
-  HOST = "0.0.0.0"
-  HOSTNAME = "0.0.0.0"
-  BIND = "0.0.0.0"
